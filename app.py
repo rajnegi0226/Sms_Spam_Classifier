@@ -2,10 +2,10 @@ import streamlit as st
 import pickle
 import string
 import nltk
-nltk.download('punkt')
+
 # Function to download NLTK resources
 def download_nltk_resources():
-    
+    nltk.download('punkt')
     nltk.download('punkt_tab')
     nltk.download('stopword')
     try:

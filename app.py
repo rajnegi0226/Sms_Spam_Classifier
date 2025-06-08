@@ -2,6 +2,7 @@ import streamlit as st
 import pickle
 import string
 import nltk
+nltk.download('punkt')
 # Function to download NLTK resources
 def download_nltk_resources():
     

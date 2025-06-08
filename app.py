@@ -4,6 +4,9 @@ import string
 import nltk
 # Function to download NLTK resources
 def download_nltk_resources():
+    
+    nltk.download('punkt_tab')
+    nltk.download('stopword')
     try:
         nltk.data.find('tokenizers/punkt')
     except LookupError:
@@ -26,8 +29,6 @@ ps = PorterStemmer()
 
 
 def transform_text(text):
-    # nltk.download('punkt_tab')
-    # nltk.download('stopword')
     text = text.lower()
     text = nltk.word_tokenize(text)
 

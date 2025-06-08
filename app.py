@@ -7,10 +7,28 @@ from nltk.stem.porter import PorterStemmer
 
 ps = PorterStemmer()
 
+# Function to download NLTK resources
+def download_nltk_resources():
+    try:
+        nltk.data.find('tokenizers/punkt')
+    except LookupError:
+        nltk.download('punkt')
+
+    try:
+        nltk.data.find('corpora/stopwords')
+    except LookupError:
+        nltk.download('stopwords')
+
+# Call the function to ensure resources are available
+download_nltk_resources()
+
+# Now import after ensuring they're available
+from nltk.corpus import stopwords
+from nltk.tokenize import word_tokenize
 
 def transform_text(text):
-    nltk.download('punkt_tab')
-    nltk.download('stopword')
+    # nltk.download('punkt_tab')
+    # nltk.download('stopword')
     text = text.lower()
     text = nltk.word_tokenize(text)
 

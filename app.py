@@ -1,12 +1,7 @@
 import streamlit as st
 import pickle
 import string
-from nltk.corpus import stopwords
 import nltk
-from nltk.stem.porter import PorterStemmer
-
-ps = PorterStemmer()
-
 # Function to download NLTK resources
 def download_nltk_resources():
     try:
@@ -23,8 +18,12 @@ def download_nltk_resources():
 download_nltk_resources()
 
 # Now import after ensuring they're available
-from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
+from nltk.corpus import stopwords
+from nltk.stem.porter import PorterStemmer
+
+ps = PorterStemmer()
+
 
 def transform_text(text):
     # nltk.download('punkt_tab')
